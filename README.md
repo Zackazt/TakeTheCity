@@ -30,3 +30,7 @@ This system is in two parts:
 ##### This repository is for the front-end only.
 
 This application uses JSON Web Token Authentication for authentication between the client and the API.
+
+## License:
+
+GNU AGPLv3
