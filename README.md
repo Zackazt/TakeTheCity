@@ -33,4 +33,4 @@ This application uses JSON Web Token Authentication for authentication between t
 
 ## License:
 
-GNU AGPLv3
+[GNU AGPLv3](https://www.gnu.org/licenses/agpl-3.0.en.html)
