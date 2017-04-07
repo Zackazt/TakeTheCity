@@ -1,0 +1,121 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	line-height: 1.42em;
+	color:#A7A1AE;
+	/*background-color:#1F2739;*/
+}
+name-search-box{
+	margin-right: 20px;
+	display: block;
+	margin-top: 20px;
+	text-align: right;
+}
+table{
+	text-align: left;
+	font-size: 1vw;
+}
+th {
+	line-height:1em;
+	color: #4DC3FA;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	background-color: #253F3F;
+}
+
+h2 {
+	font-size:1em; 
+	font-weight: 300;
+	text-align: center;
+	display: block;
+	line-height:1em;
+	padding-bottom: 2em;
+	color: #FB667A;
+	}
+td{
+	color: #A7A1AE;
+	font-family: 'Open Sans', sans-serif;
+  	font-weight: 700;
+}
+button{
+	font-family: arial;
+	font-weight: bold;
+}
+.prgsBtn{
+	margin-bottom: 15px;
+}
+
+.container {
+	text-align: left;
+	overflow: hidden;
+	width: 100%;
+	margin: 0 auto;
+	display: table;
+	padding: 0 0 8em 0;
+}
+
+.container td, .container th {
+
+	padding-left:2%;  
+}
+
+/* Background-color of the odd rows */
+.container tr:nth-child(odd) {
+	background-color: #323C50;
+}
+
+/* Background-color of the even rows */
+.container tr:nth-child(even) {
+	background-color: #2C3446;
+}
+
+.container td:first-child {  }
+
+@media (max-width: 800px) {
+.container td:nth-child(4),
+.container th:nth-child(4) { display: none; }
+}
+.detail-row{
+	border: none;
+	cursor: default;
+	background-color: #323C50;
+}
+.detail-row p{
+	display: inline;
+	color: yellow;
+}
+
+.viewHistory{
+	cursor: pointer;
+	font-size: 20px;
+	margin-bottom: 10px;
+	color: #aaaaaa;
+	margin-right: 15px;
+}
+.viewHistory:hover{
+	color: white;
+}
+
+@media screen and (max-width: 1200px){
+	tr{
+		font-size: 1.5vw;
+	}
+}
+@media screen and (max-width: 900px){
+	tr{
+		font-size: 2vw;
+	}
+}
+@media screen and (max-width: 700px){
+	tr{
+		font-size: 3vw;
+	}
+}
+@media screen and (max-width: 500px){
+	tr{
+		font-size: 4vw;
+	}
+}

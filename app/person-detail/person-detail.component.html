@@ -1,0 +1,76 @@
+<login-modal></login-modal>
+
+<div *ngIf="peopleDoneLoading" class="parent-container">
+	<div id="name">
+		<h1>{{person.first_name}} {{person.last_name}}</h1>
+	</div>
+
+	<div class="col-md-4">
+		<div class="information">
+			<person-edit></person-edit>
+			<div class="" id="rightSide">
+				<div class="contact-info">
+				<h1 id="contact-info-header">Contact Info</h1>
+					<div class="contact-info-detail" id="phone">
+						<i class="fa fa-phone" aria-hidden="true"></i>
+						<h3>706-706-7060</h3>
+					</div>
+					<div class="contact-info-detail" id="email">
+						<i class="fa fa-envelope" aria-hidden="true"></i>
+						<h3>{{person.email}}</h3>
+					</div>
+					<div class="contact-info-detail" id="address">
+						<i class="fa fa-home" aria-hidden="true"></i>
+						<div>
+							<h3>{{person.street_number}} {{person.street_name}}</h3>
+							<h3>{{person.city_name}}, {{person.state_abbreviation}} {{person.zipcode}}</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div  class="right-side-details" id="leftSide">
+				<div class="contact-info-detail" id="needs">
+					<label>Needs</label>
+					<p>{{person.needs}}</p>
+				</div>
+				<div class="contact-info-detail" id="needs">
+					<label>Accepted Christ?</label>
+					<p *ngIf="person.accepted_christ">{{person.first_name}} has accepted Christ.</p>
+					<p *ngIf="!person.accepted_christ">{{person.first_name}} has not yet accepted Christ.</p>
+				</div>
+				<div class="contact-info-detail" id="needs">
+					<label>Received Healing?</label>
+					<p *ngIf="person.received_healing">{{person.first_name}} has received healing.</p>
+					<p *ngIf="!person.received_healing">{{person.first_name}} has not yet received healing.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-8">
+		<div id="person-progress">
+			<div id="progressModalIcons">
+				<div [class.hideHint]="!prgHistoryHover" [class.showHint]="prgHistoryHover"><hint [hintText]="'View Progress History'"></hint></div>
+				<i class="fa fa-history viewHistory" (hover)="test()" aria-hidden="true" data-toggle="modal" data-target="#progressHistoryModal"></i>
+				<i class="fa fa-pencil-square-o updateProgress" aria-hidden="true" data-toggle="modal" data-target="#progressUpdateModal"></i>
+			</div>
+			<progress-history (progressHistoryDoneLoading)="progressHistoryLoaded()"></progress-history>
+			<progress-update (hasUpdatedProgress)="hasUpdatedProgress()"></progress-update>
+			<div class="progressContainer">
+				<progress-bar [progressPercentage]="person.progress_percentage"></progress-bar>
+				<h3 *ngIf="progressHistoryDoneLoading && progressHistoryService.hasProgressHistory()">Current status: <b><i>{{progressHistoryService.getLocalProgressHistory()[progressHistoryService.getLocalProgressHistory().length-1].progress_step}}</i></b></h3>
+			</div>
+		</div>
+
+		<div class="log">
+			<div class="log-contact-form">
+				<log-contact></log-contact>
+			</div>
+			<contact-log-history *ngIf="person.contacts.length > 0"></contact-log-history>
+			<div class="notYetContacted" *ngIf="person.contacts.length <= 0">
+				<h1>Has Not Been Contacted Yet</h1>
+			</div>
+		</div>
+	</div>
+</div>

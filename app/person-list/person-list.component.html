@@ -1,0 +1,49 @@
+<login-modal></login-modal>
+
+<div *ngIf="peopleDoneLoading">
+
+	<logout></logout>
+
+	<div id="logo"><img src="https://i.imgur.com/2NE7Ejo.png"></div>
+
+	<name-search-box class="name-search" (textUpdate)="term = $event"></name-search-box>
+
+	<div *ngIf="people.length > 0" class="container"> 
+		<table class="table table-responsive">
+		    <thead>
+			    <tr>
+			        <th>Name</th>
+			        <th class="td-fit">Last Contacted</th>
+			        <th class="td-fit">Contact Type</th>
+			        <th class="td-fit">Who Made Contact</th>
+			        <th>Progress</th>
+			        <th class="td-fit">Delete</th>
+			    </tr>
+		    </thead>
+		    <tbody>	  
+				    <tr 
+				    *ngFor="let person of people | namesearch : term"
+					[class.notNewPerson]="!person.is_new_contact"
+					[class.newPerson]="person.is_new_contact">
+				        <td (click)="viewContact($event, person)">{{person.first_name}} {{person.last_name}}</td>
+
+				        <td (click)="viewContact($event, person)" class="td-fit" *ngIf="person.contacts[0]" >{{person.contacts[person.contacts.length-1].date | amCalendar}}</td>
+				        <td (click)="viewContact($event, person)" class="td-fit" *ngIf="!person.contacts[0]" >No Contact Made Yet</td>
+
+				        <td (click)="viewContact($event, person)" class="td-fit" *ngIf="person.contacts[0]" >{{person.contacts[person.contacts.length-1].contact_type}}</td>
+				        <td (click)="viewContact($event, person)" class="td-fit" *ngIf="!person.contacts[0]" ></td>
+
+				        <td (click)="viewContact($event, person)" class="td-fit" *ngIf="person.contacts[0]">{{person.user_who_made_contact.first_name}} {{person.user_who_made_contact.last_name}}</td>
+				        <td (click)="viewContact($event, person)" class="td-fit" *ngIf="!person.contacts[0]"></td>
+
+				        <td (click)="viewContact($event, person)">
+				        	<p id="progressStepPreview">{{progressUpdateService.mapProgressStepToLevel(person.progress_level)}}</p>
+				        	<progress-bar [progressPercentage]="person.progress_percentage"></progress-bar>
+				        </td>
+				        <td class="td-fit delete"><i (click)="onDeleteButtonClick(person)" class="fa fa-trash delete-icon" aria-hidden="true"></i></td>
+				    </tr>
+		    </tbody>
+		</table>
+	</div>
+	<div *ngIf="people.length == 0">There are no contacts currently. Please add a new contact.</div>
+</div>

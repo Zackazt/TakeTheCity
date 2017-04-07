@@ -1,0 +1,153 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+@import url('https://fonts.googleapis.com/css?family=Cinzel:700');
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+
+body{
+	padding: 0;
+	margin: 0;
+	background-color: #1F2739;
+	overflow: scroll;
+	color: white;
+}
+.showHint{
+	transition: 0.3s;
+	opacity: 1;
+}
+.hideHint{
+	transition: 0.3s;
+	opacity: 0;
+}
+
+.updateProgress{
+	cursor: pointer;
+	font-size: 20px;
+	color: #aaaaaa;
+}
+.updateProgress:hover{
+	color: white;
+}
+.viewHistory{
+	cursor: pointer;
+	font-size: 20px;
+	color: #aaaaaa;
+	margin-right: 10px;
+}
+.viewHistory:hover{
+	color: white;
+}
+#progressModalIcons{
+	background-color: #253F3F;
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 15px;
+}
+
+.contact-info{
+	padding: 15px;
+}
+#contact-info-header{
+	color: #4DC3FA;
+	border-bottom: 1px solid white;
+}
+.contact-info-detail{
+}
+.progressContainer{
+	margin-right: 15px;
+	margin-left: 15px;
+}
+.notYetContacted{
+	margin-left: 20px;
+	float: left;
+	clear: both;
+}
+#name{
+	margin-left: 15px;
+	margin-right: 15px;
+
+}
+#name h1{
+	font-size: 3vw;
+	font-family: 'Cinzel', serif;
+	color: #D0DBF5;
+	padding: 15px;
+	border-radius: 10px 10px 0 0;
+	margin-bottom: 20px;
+	background-color: #2C3446;
+	text-align: center;
+}
+#needs{
+	margin-bottom: 30px;
+	padding: 15px;
+	border-bottom: 1px solid white;
+}
+.right-side-details{
+	background-color: #2C3446;
+}
+
+i{
+	margin-bottom: 0;
+	margin-right: 20px;
+	color: #FB667A;
+}
+h3{
+	margin-top: 0;
+	font-family: 'Slabo 27px', serif;
+	color: #A7A1AE;
+}
+#phone{
+	display: block;
+	padding: 15px;
+	margin-bottom: 10px;
+	/*background-color: #2C3446;*/
+}
+#email{
+	display: block;
+	padding: 15px;
+	margin-bottom: 10px;
+	/*background-color: #2C3446;*/
+}
+#address{
+	display: block;
+	padding: 15px;
+	margin-bottom: 10px;
+	/*background-color: #2C3446;*/
+}
+#address i{
+	float: none;
+}
+.modal-backdrop {
+   background-color: #2C3446;
+}
+label{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1vw;
+	color: #FB667A;
+}
+p{
+	font-family: 'Slabo 27px', serif;
+	font-size: 1vw;
+	color: #A7A1AE;
+}
+button{
+	font-family: arial;
+	font-weight: bold;
+}
+#person-progress{
+	background-color: #2C3446;
+	margin-bottom: 20px;
+}
+.prgsBtn{
+	margin-bottom: 15px;
+}
+#rightSide{
+	background-color: #2C3446;
+}
+#leftSide{
+	background-color: #2C3446;
+}
+.information{
+	background-color: #2C3446;
+	overflow: hidden;
+	margin-bottom: 15px;
+}

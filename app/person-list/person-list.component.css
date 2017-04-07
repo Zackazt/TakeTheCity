@@ -1,0 +1,193 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+@import url('https://fonts.googleapis.com/css?family=Cinzel:700');
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	line-height: 1.42em;
+	color:#A7A1AE;
+	/*background-color:#1F2739;*/
+}
+#logo{
+	margin-left: 2.5%;
+	margin-top: 20px;
+}
+#logo img{
+	width: 200px;
+}
+#progressStepPreview{
+	color: #FB667A;
+	font-size: 14px;
+}
+name-search-box{
+	margin-left: 2.5%;
+	display: block;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+table{
+	text-align: center;
+	font-size: 1vw;
+}
+th:first-child{
+	border-radius: 20px 0 0 0;
+}
+th:last-child{
+	border-radius: 0 20px 0 0;
+}
+th {
+	line-height:1em;
+	color: #4DC3FA;
+	font-family: 'Cinzel', serif;
+	font-weight: 700;
+	cursor: default;
+	background-color: #253F3F;
+	text-align: center;
+	border-left: 5px solid #1F2739;
+	font-size: 1.5vw;
+}
+tr{
+	cursor: pointer;
+	border-top: 5px solid #1F2739;
+}
+
+h2 {
+	font-size:1em; 
+	font-weight: 300;
+	text-align: center;
+	display: block;
+	line-height:1em;
+	padding-bottom: 2em;
+	color: #FB667A;
+	}
+table tr td{
+	color: #A7A1AE;
+	font-family: 'Open Sans', sans-serif;
+  	font-weight: 700;
+  	border: 5px solid #1F2739;
+  	vertical-align: middle;
+}
+.container {
+	text-align: left;
+	overflow: hidden;
+	width: 95%;
+	margin: 0 auto;
+	display: table;
+	padding: 0 0 8em 0;
+}
+.td-fit{
+	width:1%;
+    white-space:nowrap;
+}
+.delete-icon{
+	font-size: 22px;
+}
+.delete-icon:hover{
+	color: #FB667A; 
+}
+.container td, .container th {
+
+	
+}
+
+/* Background-color of the odd rows */
+.container .notNewPerson:nth-child(odd) {
+	background-color: #323C50;
+}
+
+/* Background-color of the even rows */
+.container .notNewPerson:nth-child(even) {
+	background-color: #2C3446;
+}
+
+.container td:first-child { 
+	color: #FB667A; 
+	font-family: 'Cinzel', serif;
+}
+
+.container .notNewPerson:hover {
+	background-color: #464A52;
+	-webkit-box-shadow: 0 6px 6px -6px #0E1119;
+	-moz-box-shadow: 0 6px 6px -6px #0E1119;
+	box-shadow: 0 6px 6px -6px #0E1119;
+}
+.container .newPerson:hover {
+	background-color: #464A52;
+	-webkit-box-shadow: 0 6px 6px -6px #0E1119;
+	-moz-box-shadow: 0 6px 6px -6px #0E1119;
+	box-shadow: 0 6px 6px -6px #0E1119;
+}
+
+
+
+@media (max-width: 800px) {
+.container td:nth-child(4),
+.container th:nth-child(4) { display: none; }
+}
+
+.container .newPerson{
+	background-color: #50486B;
+	/*background-color: #342E4A;*/
+}
+
+/*
+
+table{
+	width: 100%;
+	text-align: center;
+}
+th{
+	background-color: #1A1A1A; 
+	text-align: center;
+	color: yellow;
+}
+tr{
+	list-style: none;
+	margin-top: 20px;
+	font-size: 1vw;
+}
+.prg{
+	text-align: center;
+	padding-top: 4px;
+}
+.container{
+	width: 100%;
+	margin-top: 20px;
+	padding: 0;
+}
+.notNewPerson{
+	background-color: #959191;
+	color: #242626;
+	cursor: pointer;
+	font-weight: bold;
+}
+.notNewPerson:hover{
+	background-color: #6C2222;
+}
+
+.newPerson:hover{
+	background-color: white;
+}*/
+
+
+@media screen and (max-width: 1200px){
+	tr{
+		font-size: 1.5vw;
+	}
+}
+@media screen and (max-width: 900px){
+	tr{
+		font-size: 2vw;
+	}
+}
+@media screen and (max-width: 700px){
+	tr{
+		font-size: 3vw;
+	}
+}
+@media screen and (max-width: 500px){
+	tr{
+		font-size: 4vw;
+	}
+}

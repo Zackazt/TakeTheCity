@@ -1,0 +1,44 @@
+<div class="modal fade" id="progressUpdateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Update Progress</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                
+                <div *ngIf="doneLoadingPerson">
+                    <form [formGroup]="updateProgressForm" *ngIf="person.progress_level > 0">
+                        <div class="form-group">
+                            <label>Progress Step</label>
+                            <select 
+                            formControlName="progressStep" 
+                            class="form-control" 
+                            [(ngModel)]="selectedOption"
+                            >
+                               <!--  Remember to update the MAP if editing these values. -->
+                                <option selected="selected">Select Option</option>
+                                <option *ngIf="person.progress_level == 1">Donation Requested</option>
+                                <option *ngIf="person.progress_level == 2">Donation Pending</option>
+                                <option *ngIf="person.progress_level == 3">Donation Received</option>
+                                <option *ngIf="person.progress_level == 4">Follow Up Contact Made</option>
+                                <option *ngIf="person.progress_level == 5">In-Home Bible Study Launched</option>
+                                <option *ngIf="person.progress_level == 5">Referred To Local Church Or Ministry</option> <!-- Special case... -->
+                                <option *ngIf="person.progress_level == 6">In-Home Bible Study Completed</option>
+                                <option *ngIf="person.progress_level == 9">Began Involvement With Take The City Ministry</option>
+                            </select>
+                        </div>
+                        
+                    </form>
+                    <div *ngIf="person.progress_level == 0">Please make initial contact.</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                <button data-dismiss="modal" [disabled]="selectedOption=='Select Option'" class="btn btn-primary" type="submit" (click)="submitProgressUpdate()">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>

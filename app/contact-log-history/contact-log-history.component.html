@@ -1,0 +1,26 @@
+<div class="container">
+	<table class="table" *ngIf="person.contacts.length > 0 && doneLoading">
+		<thead>
+			<tr>
+				<th class="td-fit"><i class="fa fa-plus logContact" aria-hidden="true" data-toggle="modal" data-target="#logContactModal"></i></th>
+				<th>Date</th>
+				<th class="td-fit">Contact Type</th>
+				<th colspan="3">User Who Contacted</th>
+			</tr>
+		</thead>
+		<tbody>
+			<ng-container *ngFor="let contact of person.contacts">
+				<tr (click)="onContactHistoryClick(contact.id)">
+				<td class="td-fit"></td>
+					<td>{{contact.date | amCalendar}}</td>
+					<td>{{contact.contact_type}}</td>
+					<!-- <td>{{contact.user}}</td> -->
+					<td>Zackery Wilson</td>
+				</tr>
+				<tr>
+					<td id="detail-row-{{contact.id}}" class="detail-row hidden" colspan="4"><p>{{contact.details}}</p></td>
+				</tr>
+			</ng-container>
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,223 @@
+<!-- Button trigger modal -->
+<!-- <button id="editContactDetailsButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#editContactModal">
+  Edit Contact Details
+</button> -->
+<i class="fa fa-pencil editContact" aria-hidden="true" data-toggle="modal" data-target="#editContactModal"></i>
+
+<!-- Modal -->
+<div class="modal fade" id="editContactModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Contact</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        <div class="modal-body">
+            
+            <div id="container">
+                <form  [formGroup]="editContactForm" (ngSubmit)="submitEditContactForm()">
+                    <div class="form-group col-md-6">
+                        <label for="firstName">First Name</label>
+                        <input
+                            id="firstName" 
+                            type="text" 
+                            class="form-control"
+                            formControlName="firstName">
+                        <div 
+                            *ngIf="editContactForm.controls['state'].errors && 
+                                    editContactForm.controls['state'].touched && 
+                                    editContactForm.controls['state'].errors.required"
+                            class="alert alert-danger">
+                            First Name is required.
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="Last Name">Last Name</label>
+                        <input 
+                            id="lastName" 
+                            type="text" 
+                            class="form-control"
+                            formControlName="lastName">
+                        <div class="alert alert-danger" 
+                            *ngIf="!editContactForm.controls['lastName'].valid && 
+                                    editContactForm.controls['lastName'].touched">
+                            Last Name required.
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="email">Email</label>
+                        <input 
+                            id="email" 
+                            type="email" 
+                            class="form-control"
+                            formControlName="email">
+                        <div 
+                            *ngIf="editContactForm.controls['email'].errors && 
+                                    editContactForm.controls['email'].touched && 
+                                    editContactForm.controls['email'].errors.required"
+                            class="alert alert-danger">
+                            Email is required.
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="needs">Needs</label>
+                        <textarea
+                            rows="5"
+                            id="needs" 
+                            type="text" 
+                            class="form-control"
+                            formControlName="needs"></textarea>
+                        <div 
+                            *ngIf="editContactForm.controls['needs'].errors && 
+                                    editContactForm.controls['needs'].touched && 
+                                    editContactForm.controls['needs'].errors.required"
+                            class="alert alert-danger">
+                            This field is required.
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <input 
+                            [checked]="person.accepted_christ"
+                            type="checkbox"
+                            id="acceptedChrist"
+                            class="custom-control-input"
+                            formControlName="acceptedChrist">
+                            <label for="acceptedChrist">Accepted Christ?</label>
+                        <div 
+                            *ngIf="editContactForm.controls['acceptedChrist'].errors && 
+                                    editContactForm.controls['acceptedChrist'].touched && 
+                                    editContactForm.controls['acceptedChrist'].errors.required"
+                            class="alert alert-danger">
+                            This field is required.
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <input 
+                            [checked]="person.received_healing"
+                            type="checkbox"
+                            id="receivedHealing"
+                            class="custom-control-input"
+                            formControlName="receivedHealing">
+                            <label for="receivedHealing">Received Healing?</label>
+                        <div 
+                            *ngIf="editContactForm.controls['receivedHealing'].errors && 
+                                    editContactForm.controls['receivedHealing'].touched && 
+                                    editContactForm.controls['receivedHealing'].errors.required"
+                            class="alert alert-danger">
+                            This field is required.
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="outreach">Which outreach are you a part of?</label>
+                        <input 
+                            type="text"
+                            id="outreach"
+                            class="form-control"
+                            formControlName="outreach">
+                        <div 
+                            *ngIf="editContactForm.controls['outreach'].errors && 
+                                    editContactForm.controls['outreach'].touched && 
+                                    editContactForm.controls['outreach'].errors.required"
+                            class="alert alert-danger">
+                            Outreach required.
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="streetNumber">Street Number</label>
+                        <input 
+                            type="number"
+                            id="streetNumber"
+                            class="form-control"
+                            formControlName="streetNumber">
+                        <div 
+                            *ngIf="editContactForm.controls['streetNumber'].errors && 
+                                    editContactForm.controls['streetNumber'].touched && 
+                                    editContactForm.controls['streetNumber'].errors.required"
+                            class="alert alert-danger">
+                            Street number required.
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-8">
+                        <label for="streetName">Street Name</label>
+                        <input 
+                            type="text"
+                            id="streetName"
+                            class="form-control"
+                            formControlName="streetName">
+                        <div 
+                            *ngIf="editContactForm.controls['streetName'].errors && 
+                                    editContactForm.controls['streetName'].touched && 
+                                    editContactForm.controls['streetName'].errors.required"
+                            class="alert alert-danger">
+                            Street name required.
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-8">
+                        <label for="citytName">City Name</label>
+                        <input 
+                            type="text"
+                            id="cityName"
+                            class="form-control"
+                            formControlName="cityName">
+                        <div 
+                            *ngIf="editContactForm.controls['cityName'].errors && 
+                                    editContactForm.controls['cityName'].touched && 
+                                    editContactForm.controls['cityName'].errors.required"
+                            class="alert alert-danger">
+                            City name required.
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="state">State Abbreviation</label>
+                        <input 
+                            type="text"
+                            id="state"
+                            class="form-control"
+                            formControlName="state">
+                        <div 
+                            *ngIf="editContactForm.controls['state'].errors && 
+                                    editContactForm.controls['state'].touched && 
+                                    editContactForm.controls['state'].errors.required"
+                            class="alert alert-danger">
+                            State abbreviation required.
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="zipcode">Zip Code</label>
+                        <input 
+                            type="number"
+                            id="zipcode"
+                            class="form-control"
+                            formControlName="zipcode">
+                        <div 
+                            *ngIf="editContactForm.controls['zipcode'].errors && 
+                                    editContactForm.controls['zipcode'].touched && 
+                                    editContactForm.controls['zipcode'].errors.required"
+                            class="alert alert-danger">
+                            Zip Code required.
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+            <button data-dismiss="modal" [disabled]="!editContactForm.valid" class="btn btn-primary" type="submit" (click)="submitEditContactForm()">Submit</button>
+        </div>
+        </div>
+    </div>
+</div>

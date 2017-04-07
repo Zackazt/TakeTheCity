@@ -1,0 +1,13 @@
+#logContactButton{
+	margin-bottom: 20px;
+	font-family: arial;
+	font-weight: bold;
+	clear: both;
+	margin-left: 15px;
+	float: left;
+}
+
+p{
+	display: inline;
+	font-size: 12px;
+}

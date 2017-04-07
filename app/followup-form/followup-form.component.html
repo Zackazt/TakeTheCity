@@ -1,0 +1,208 @@
+<div id="container" class="col-md-8 col-md-offset-2">
+    <form  [formGroup]="followupForm" (ngSubmit)="submitFollowUpForm()">
+        <div class="form-group col-md-6">
+            <!-- <label for="firstName">First Name</label> -->
+            <input 
+                placeholder="First Name"
+                id="firstName" 
+                type="text" 
+                class="form-control"
+                formControlName="firstName">
+            <div 
+                *ngIf="followupForm.controls['firstName'].errors && 
+                        followupForm.controls['firstName'].touched && 
+                        followupForm.controls['firstName'].errors.required"
+                class="alert alert-danger">
+                First Name is required.
+            </div>
+        </div>
+
+        <div class="form-group col-md-6">
+            <!-- <label for="Last Name">Last Name</label> -->
+            <input 
+                placeholder="Last Name"
+                id="lastName" 
+                type="text" 
+                class="form-control"
+                formControlName="lastName">
+            <div class="alert alert-danger" 
+                *ngIf="!followupForm.controls['lastName'].valid && 
+                        followupForm.controls['lastName'].touched">
+                Last Name required.
+            </div>
+        </div>
+
+        <div class="form-group col-md-12">
+            <!-- <label for="email">Email</label> -->
+            <input 
+                placeholder="Email Address" 
+                id="email" 
+                type="email" 
+                class="form-control"
+                formControlName="email">
+            <div 
+                *ngIf="followupForm.controls['email'].errors && 
+                        followupForm.controls['email'].touched && 
+                        followupForm.controls['email'].errors.required"
+                class="alert alert-danger">
+                Email is required.
+            </div>
+        </div>
+
+        <div class="form-group col-md-12">
+            <!-- <label for="needs">Needs</label> -->
+            <textarea
+                placeholder="Detail the needs of the new contact."
+                rows="5"
+                id="needs" 
+                type="text" 
+                class="form-control"
+                formControlName="needs"></textarea>
+            <div 
+                *ngIf="followupForm.controls['needs'].errors && 
+                        followupForm.controls['needs'].touched && 
+                        followupForm.controls['needs'].errors.required"
+                class="alert alert-danger">
+                This field is required.
+            </div>
+        </div>
+
+        <div class="form-group col-md-12">
+            <input 
+                type="checkbox"
+                id="acceptedChrist"
+                class="custom-control-input"
+                formControlName="acceptedChrist">
+                <label for="acceptedChrist">Accepted Christ?</label>
+            <div 
+                *ngIf="followupForm.controls['acceptedChrist'].errors && 
+                        followupForm.controls['acceptedChrist'].touched && 
+                        followupForm.controls['acceptedChrist'].errors.required"
+                class="alert alert-danger">
+                This field is required.
+            </div>
+        </div>
+
+        <div class="form-group col-md-12">
+            <input 
+                type="checkbox"
+                id="receivedHealing"
+                class="custom-control-input"
+                formControlName="receivedHealing">
+                <label for="receivedHealing">Received Healing?</label>
+            <div 
+                *ngIf="followupForm.controls['receivedHealing'].errors && 
+                        followupForm.controls['receivedHealing'].touched && 
+                        followupForm.controls['receivedHealing'].errors.required"
+                class="alert alert-danger">
+                This field is required.
+            </div>
+        </div>
+
+        <div class="form-group col-md-12">
+            <!-- <label for="outreach">Which outreach are you a part of?</label> -->
+            <input 
+                placeholder="Which outreach are you a part of?" 
+                type="text"
+                id="outreach"
+                class="form-control"
+                formControlName="outreach">
+            <div 
+                *ngIf="followupForm.controls['outreach'].errors && 
+                        followupForm.controls['outreach'].touched && 
+                        followupForm.controls['outreach'].errors.required"
+                class="alert alert-danger">
+                Outreach required.
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            <!-- <label for="streetNumber">Street Number</label> -->
+            <input 
+                placeholder="Street Number" 
+                type="number"
+                id="streetNumber"
+                class="form-control"
+                formControlName="streetNumber">
+            <div 
+                *ngIf="followupForm.controls['streetNumber'].errors && 
+                        followupForm.controls['streetNumber'].touched && 
+                        followupForm.controls['streetNumber'].errors.required"
+                class="alert alert-danger">
+                Street number required.
+            </div>
+        </div>
+
+        <div class="form-group col-md-8">
+            <!-- <label for="streetName">Street Name</label> -->
+            <input 
+                placeholder="Street Name, ex: Broad St." 
+                type="text"
+                id="streetName"
+                class="form-control"
+                formControlName="streetName">
+            <div 
+                *ngIf="followupForm.controls['streetName'].errors && 
+                        followupForm.controls['streetName'].touched && 
+                        followupForm.controls['streetName'].errors.required"
+                class="alert alert-danger">
+                Street name required.
+            </div>
+        </div>
+
+        <div class="form-group col-md-8">
+            <!-- <label for="citytName">City Name</label> -->
+            <input 
+                placeholder="City Name" 
+                type="text"
+                id="cityName"
+                class="form-control"
+                formControlName="cityName">
+            <div 
+                *ngIf="followupForm.controls['cityName'].errors && 
+                        followupForm.controls['cityName'].touched && 
+                        followupForm.controls['cityName'].errors.required"
+                class="alert alert-danger">
+                City name required.
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            <!-- <label for="state">State Abbreviation</label> -->
+            <input 
+                placeholder="State Abbreviation" 
+                type="text"
+                id="state"
+                class="form-control"
+                formControlName="state">
+            <div 
+                *ngIf="followupForm.controls['state'].errors && 
+                        followupForm.controls['state'].touched && 
+                        followupForm.controls['state'].errors.required"
+                class="alert alert-danger">
+                State abbreviation required.
+            </div>
+        </div>
+
+        <div class="form-group col-md-12">
+            <!-- <label for="zipcode">Zip Code</label> -->
+            <input 
+                placeholder="5-Digit Zip Code" 
+                type="number"
+                id="zipcode"
+                class="form-control"
+                formControlName="zipcode">
+            <div 
+                *ngIf="followupForm.controls['zipcode'].errors && 
+                        followupForm.controls['zipcode'].touched && 
+                        followupForm.controls['zipcode'].errors.required"
+                class="alert alert-danger">
+                Zip Code required.
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <button [disabled]="!followupForm.valid" class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </form>
+</div>

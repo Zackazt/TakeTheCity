@@ -1,0 +1,26 @@
+.hintBox{
+	background-color: #85878c;
+	padding: 1px;
+	display: inline-block;
+	position: absolute;
+	margin-top: -45px;
+	margin-left: -20px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border-radius: 5px 5px 5px 5px;
+}
+.hintText{
+	color: white;
+	font-size: 14px;
+	font-family: arial;
+	font-weight: bold;
+}
+.arrowDown {
+  width: 0; 
+  height: 0; 
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  position: absolute;
+  border-top: 8px solid #85878c;
+  margin-top: -13px;
+}
