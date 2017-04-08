@@ -20,12 +20,12 @@
                             >
                                <!--  Remember to update the MAP if editing these values. -->
                                 <option selected="selected">Select Option</option>
-                                <option *ngIf="person.progress_level == 1">Donation Requested</option>
+                                <!-- <option *ngIf="person.progress_level == 1">Donation Requested</option>
                                 <option *ngIf="person.progress_level == 2">Donation Pending</option>
-                                <option *ngIf="person.progress_level == 3">Donation Received</option>
-                                <option *ngIf="person.progress_level == 4">Follow Up Contact Made</option>
+                                <option *ngIf="person.progress_level == 3">Donation Received</option> -->
+                                <option *ngIf="person.progress_level <= 4">Follow Up Contact Made</option>
                                 <option *ngIf="person.progress_level == 5">In-Home Bible Study Launched</option>
-                                <option *ngIf="person.progress_level == 5">Referred To Local Church Or Ministry</option> <!-- Special case... -->
+                                <option *ngIf="person.progress_level == 5">Referred To Local Church Or Ministry</option>
                                 <option *ngIf="person.progress_level == 6">In-Home Bible Study Completed</option>
                                 <option *ngIf="person.progress_level == 9">Began Involvement With Take The City Ministry</option>
                             </select>
