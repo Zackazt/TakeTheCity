@@ -50,7 +50,6 @@
         </div>
 
         <div class="form-group col-md-6">
-            <!-- <label for="email">Email</label> -->
             <input 
                 placeholder="Phone Number" 
                 id="phone" 
@@ -63,6 +62,13 @@
                         followupForm.controls['phone'].errors.required"
                 class="alert alert-danger">
                 Phone is required.
+            </div>
+            <div 
+                *ngIf="followupForm.controls['phone'].errors && 
+                        followupForm.controls['phone'].touched &&
+                        followupForm.controls['phone'].errors.phoneNumberLength"
+                class="alert alert-danger">
+                Phone number must be 10 characters. Only numbers, ex. '7061239876'.
             </div>
         </div>
 

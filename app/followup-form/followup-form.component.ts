@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup, Validators, FormBuilder} from '@angular/forms';
 import {FollowupFormService} from './followup-form.service';
+import {PhoneNumberValidators} from "../validators/phone-number-validator";
+
 
 @Component({
     selector: 'followup-form',
@@ -27,7 +29,12 @@ export class FollowupFormComponent {
 			cityName:        ['',	   Validators.required],
 			state:           ['',	   Validators.required],
 			zipcode:         ['',	   Validators.required],
-			phone:           ['',	   Validators.required],
+			phone:           
+				['', Validators.compose([
+					 	Validators.required,
+					 	PhoneNumberValidators.phoneNumberLength
+					])
+				],
 		});
 	}
 

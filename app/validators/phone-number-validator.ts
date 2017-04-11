@@ -4,7 +4,8 @@ export class PhoneNumberValidators{
 
 	static phoneNumberLength(formControl: FormControl){
 		const numberLength = 10;
-		if(formControl.value.length != numberLength){
+		console.log(formControl.value.toString().length);
+		if(formControl.value.toString().length != numberLength){
 			return {
 				phoneNumberLength: {
 					numberLength: numberLength
