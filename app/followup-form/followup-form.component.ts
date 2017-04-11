@@ -27,6 +27,7 @@ export class FollowupFormComponent {
 			cityName:        ['',	   Validators.required],
 			state:           ['',	   Validators.required],
 			zipcode:         ['',	   Validators.required],
+			phone:           ['',	   Validators.required],
 		});
 	}
 
@@ -44,6 +45,7 @@ export class FollowupFormComponent {
 	        "zipcode":                  this.followupForm.controls['zipcode'].value,
 	        "city_name":               this.followupForm.controls['cityName'].value,
 	        "state_abbreviation":         this.followupForm.controls['state'].value,
+	        "phone_number":               this.followupForm.controls['phone'].value,
 		}
 
 		if(newPersonObject.accepted_christ != true){
