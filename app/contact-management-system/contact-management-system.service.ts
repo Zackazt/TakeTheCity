@@ -121,14 +121,15 @@ export class ContactManagementSystemService{
 				this.people[i].last_name          =          person.last_name;
 				this.people[i].email              =              person.email;
 				this.people[i].needs              =              person.needs;
-				this.people[i].street_name        =         person.street_name;
-				this.people[i].street_number      =       person.street_number;
+				this.people[i].street_name        =        person.street_name;
+				this.people[i].street_number      =      person.street_number;
 				this.people[i].accepted_christ    =    person.accepted_christ;
 				this.people[i].received_healing   =   person.received_healing;
 				this.people[i].which_outreach     =     person.which_outreach;
 				this.people[i].zipcode            =            person.zipcode;
 				this.people[i].city_name          =          person.city_name;
 				this.people[i].state_abbreviation = person.state_abbreviation;
+				this.people[i].phone_number       =       person.phone_number;
 			}
 		}
 	}

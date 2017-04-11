@@ -48,7 +48,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group col-md-12">
+                    <div class="form-group col-md-6">
                         <label for="email">Email</label>
                         <input 
                             id="email" 
@@ -61,6 +61,22 @@
                                     editContactForm.controls['email'].errors.required"
                             class="alert alert-danger">
                             Email is required.
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="phone">Phone Number</label>
+                        <input 
+                            id="phone" 
+                            type="phone" 
+                            class="form-control"
+                            formControlName="phone">
+                        <div 
+                            *ngIf="editContactForm.controls['phone'].errors && 
+                                    editContactForm.controls['phone'].touched && 
+                                    editContactForm.controls['phone'].errors.required"
+                            class="alert alert-danger">
+                            Phone is required.
                         </div>
                     </div>
 

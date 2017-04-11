@@ -30,6 +30,7 @@ export class PersonEditComponent {
 			cityName:        ['',	   Validators.required],
 			state:           ['',	   Validators.required],
 			zipcode:         ['',	   Validators.required],
+			phone:           ['',	   Validators.required],
 		});
 		this.person = this.contactManagementSystemService.getPerson();
 		this.initializeInput();
@@ -46,6 +47,7 @@ export class PersonEditComponent {
 		this.editContactForm.controls['cityName'    ].setValue(this.person.city_name);
 		this.editContactForm.controls['state'       ].setValue(this.person.state_abbreviation);
 		this.editContactForm.controls['zipcode'     ].setValue(this.person.zipcode);
+		this.editContactForm.controls['phone'       ].setValue(this.person.phone_number);
 
 		if(this.person.accepted_christ)
 			this.editContactForm.controls['acceptedChrist'].setValue(true);
@@ -68,6 +70,7 @@ export class PersonEditComponent {
 	        "zipcode":                  this.editContactForm.controls['zipcode'].value,
 	        "city_name":               this.editContactForm.controls['cityName'].value,
 	        "state_abbreviation":         this.editContactForm.controls['state'].value,
+	        "phone_number":               this.editContactForm.controls['phone'].value,
 		}
 
 		if(!updatedPersonObject.accepted_christ){
